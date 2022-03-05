@@ -3,7 +3,15 @@ package jdbctests;
 import java.sql.*;
 
 public class Main {
+/*
+ <repositories>
+        <repository>
+            <id>oracle</id>
+            <url>http://www.datanucleus.org/downloads/maven2/</url>
+        </repository>
+    </repositories>
 
+ */
     public static void main(String[] args) throws SQLException {
         String dbUrl = "jdbc:oracle:thin:@18.233.164.111:1521:xe";
         String dbUsername = "hr";
