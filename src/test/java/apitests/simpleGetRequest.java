@@ -44,12 +44,10 @@ public class simpleGetRequest {
 
     @Test
     public void test3(){
-        given().accept(ContentType.JSON)
+       RestAssured.given().accept(ContentType.JSON)
                             .when().get(hrurl).then()
                             .assertThat().statusCode(200)
                             .and().contentType("application/json");
-
-
     }
 
     /*
