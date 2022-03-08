@@ -131,6 +131,11 @@ public class TestWithOracle {
             queryResultList.add(rowMap);
 
         }
+        for (Map<String,Object> eachRow: queryResultList ) {
+            System.out.println("eachRow = " + eachRow);
+        }
+
+        }
 
     }
-}
+

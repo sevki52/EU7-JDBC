@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.when;
 
 public class SpartanGetRequest {
 
-        String spartanurl = "http://54.92.248.102:8000";
+        String spartanurl = "http://18.233.164.111:8000";
 
     @Test
     public void  test1(){
