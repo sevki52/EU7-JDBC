@@ -60,9 +60,9 @@ public class SpartanTestWithParameters {
 
         Assert.assertEquals(response.statusCode(),404);
 
-        Assert.assertEquals(response.contentType(),"application/json;charset=UTF-8");
+        Assert.assertEquals(response.contentType(),"application/json");
 
-        Assert.assertTrue(response.body().asString().contains("Spartan Not Found"));
+        Assert.assertTrue(response.body().asString().contains("Not Found"));
 
     }
 
@@ -88,7 +88,7 @@ public class SpartanTestWithParameters {
         //verify status code
         Assert.assertEquals(response.statusCode(),200);
         //verify content-type
-        Assert.assertEquals(response.contentType(),"application/json;charset=UTF-8");
+        Assert.assertEquals(response.contentType(),"application/json");
         //verify Female in the response
         assertTrue(response.body().asString().contains("Female"));
         //verify Janette in the response
@@ -111,11 +111,13 @@ public class SpartanTestWithParameters {
         //verify status code
         Assert.assertEquals(response.statusCode(),200);
         //verify content-type
-        Assert.assertEquals(response.contentType(),"application/json;charset=UTF-8");
+        Assert.assertEquals(response.contentType(),"application/json");
         //verify Female in the response
         assertTrue(response.body().asString().contains("Female"));
         //verify Janette in the response
         assertTrue(response.body().asString().contains("Janette"));
+
+        System.out.println("queryMap = " + queryMap);
 
 
 
