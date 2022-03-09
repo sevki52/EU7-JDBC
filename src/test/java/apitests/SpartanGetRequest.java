@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.when;
 
 public class SpartanGetRequest {
 
-        String spartanurl = "http://18.233.164.111:8000";
+        String spartanurl = "http://54.91.210.3:8000";
 
     @Test
     public void  test1(){
@@ -36,7 +36,7 @@ public class SpartanGetRequest {
         Assert.assertEquals(response.statusCode(),200);
 
         //verify content type
-        Assert.assertEquals(response.contentType(),"application/json;charset=UTF-8");
+        Assert.assertEquals(response.contentType(),"application/json");
 
         //verify Fidole
         Assert.assertTrue(response.body().asString().contains("Fidole"));
