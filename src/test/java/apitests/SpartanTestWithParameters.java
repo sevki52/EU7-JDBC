@@ -17,7 +17,7 @@ public class SpartanTestWithParameters {
 
     @BeforeClass
     public void beforeclass(){
-        baseURI="http://3.80.189.73:8000";
+        baseURI="http://54.91.210.3:8000";
     }
     /*
           Given accept type is Json
@@ -35,7 +35,8 @@ public class SpartanTestWithParameters {
 
        Assert.assertEquals(response.statusCode(),200);
 
-       Assert.assertEquals(response.contentType(),"application/json;charset=UTF-8");
+       //Assert.assertEquals(response.contentType(),"application/json;charset=UTF-8");
+       Assert.assertEquals(response.contentType(),"application/json");
 
        assertTrue(response.body().asString().contains("Blythe"));
     }
