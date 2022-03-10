@@ -37,7 +37,7 @@ public class SpartanTestWithJsonPath {
                             .when().get("/api/spartans/{id}");
 
        assertEquals(response.statusCode(),200);
-       assertEquals(response.contentType(),"application/json;charset=UTF-8");
+       assertEquals(response.contentType(),"application/json");
 
        //verify id and name with path()
         int id = response.path("id");

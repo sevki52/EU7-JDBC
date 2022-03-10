@@ -14,6 +14,7 @@ public class hrApiWithJsonPath {
 
     @BeforeClass
     public void beforeclass(){
+
         baseURI= ConfigurationReader.get("hr_api_url");
     }
 
@@ -42,6 +43,9 @@ public class hrApiWithJsonPath {
                             .when().get("/employees");
 
         JsonPath jsonPath = response.jsonPath();
+        //get me all firstname of employee who is working as IT_PROG
+        List<String> firstName = jsonPath.getList("items.findAll {it.job_id==\"IT_PROG\"}.first_name");
+        System.out.println("firstName = " + firstName);
 
         //get me all email of employees who is working as IT_PROG
         List<String> firstNames = jsonPath.getList("items.findAll {it.job_id==\"IT_PROG\"}.email");
