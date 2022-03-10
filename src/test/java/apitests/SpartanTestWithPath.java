@@ -74,7 +74,7 @@ public class SpartanTestWithPath {
 
         assertEquals(response.statusCode(),200);
         //verify content type
-        assertEquals(response.getHeader("Content-Type"),"application/json;charset=UTF-8");
+        assertEquals(response.getHeader("Content-Type"),"application/json");
 
         int firstId = response.path("id[0]");
         System.out.println("firstId = " + firstId);
