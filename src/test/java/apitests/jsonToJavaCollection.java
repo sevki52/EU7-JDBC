@@ -17,6 +17,7 @@ public class jsonToJavaCollection {
 
     @BeforeClass
     public void beforeclass(){
+
         baseURI= ConfigurationReader.get("spartan_api_url");
     }
 
