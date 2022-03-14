@@ -23,9 +23,9 @@ public class HamcrestMatchersApiTest {
     public void OneSpartanWithHamcrest(){
         given().accept(ContentType.JSON)
                 .and().pathParam("id",15).
-        when().get("http://3.80.189.73:8000/api/spartans/{id}")
+        when().get("http://54.91.210.3:8000/api/spartans/{id}")
                 .then().statusCode(200)
-                .and().assertThat().contentType(equalTo("application/json;charset=UTF-8"))
+                .and().assertThat().contentType(equalTo("application/json"))
                 .and().assertThat().body("id",equalTo(15),
                 "name",equalTo("Meta"),
                                         "gender",equalTo("Female"),
