@@ -17,6 +17,7 @@ public class CBTrainingWithJsonPath {
 
     @BeforeClass
     public void beforeclass(){
+
         baseURI= ConfigurationReader.get("cbt_api_url");
     }
 
