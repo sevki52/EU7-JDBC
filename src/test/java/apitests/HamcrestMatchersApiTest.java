@@ -37,16 +37,16 @@ public class HamcrestMatchersApiTest {
     @Test
     public void teacherData(){
         given().accept(ContentType.JSON)
-                .and().pathParam("id",8261)
+                .and().pathParam("id",10423)
         .when().log().all().get("http://api.cybertektraining.com/teacher/{id}")
                 .then().assertThat().statusCode(200)
                 .and().contentType(equalTo("application/json;charset=UTF-8"))
-                .and().header("Content-Length",equalTo("240"))
+                .and().header("Content-Length",equalTo("236"))
                 .and().header("Connection",equalTo("Keep-Alive"))
                 .and().header("Date",notNullValue())
-                .and().assertThat().body("teachers.firstName[0]",equalTo("James"),
-                        "teachers.lastName[0]",equalTo("Bond"),
-                                                "teachers.gender[0]",equalTo("Male"))
+                .and().assertThat().body("teachers.firstName[0]",equalTo("Alexander"),
+                        "teachers.lastName[0]",equalTo("Syrup"),
+                                                "teachers.gender[0]",equalTo("male"))
           .log().all()
                 ;
 
