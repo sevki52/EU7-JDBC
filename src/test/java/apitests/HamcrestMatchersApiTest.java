@@ -47,8 +47,7 @@ public class HamcrestMatchersApiTest {
                 .and().assertThat().body("teachers.firstName[0]",equalTo("Alexander"),
                         "teachers.lastName[0]",equalTo("Syrup"),
                                                 "teachers.gender[0]",equalTo("male"))
-          .log().all()
-                ;
+          .log().all();
 
     }
 
@@ -65,10 +64,5 @@ public class HamcrestMatchersApiTest {
 
 
     }
-
-
-
-
-
 
 }
