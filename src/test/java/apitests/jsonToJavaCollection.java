@@ -67,7 +67,7 @@ public class jsonToJavaCollection {
     @Test
     public void regionToMap(){
 
-        Response response = when().get("http://52.55.102.92:1000/ords/hr/regions");
+        Response response = when().get("http://54.91.210.3:1000/ords/hr/regions");
 
         assertEquals(response.statusCode(),200);
 
