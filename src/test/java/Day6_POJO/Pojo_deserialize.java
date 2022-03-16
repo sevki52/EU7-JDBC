@@ -17,7 +17,7 @@ public class Pojo_deserialize {
     public void oneSpartanPojo() {
         Response response = given().accept(ContentType.JSON)
                 .pathParam("id", 15)
-                .when().get("http://54.91.210.3/:8000/api/spartans/{id}");
+                .when().get("http://54.91.210.3:8000/api/spartans/{id}");
 
         assertEquals(response.statusCode(), 200);
 
@@ -40,7 +40,7 @@ public class Pojo_deserialize {
     @Test
     public void regionToPojo() {
 
-        Response response = when().get("http://54.91.210.3/:1000/ords/hr/regions");
+        Response response = when().get("http://54.91.210.3:1000/ords/hr/regions");
 
         assertEquals(response.statusCode(), 200);
 
@@ -56,7 +56,7 @@ public class Pojo_deserialize {
 //        List<Item> items = regions.getItems();
 //
 //        System.out.println(items.get(1).getRegionId());
-  }
+        }
 
         @Test
         public void gson_example () {
