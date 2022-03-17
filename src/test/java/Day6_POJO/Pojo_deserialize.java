@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -46,16 +47,16 @@ public class Pojo_deserialize {
 
         //JSON to POJO(regions class)
 
-//        Regions regions = response.body().as(Regions.class);
-//
-//        System.out.println("regions.getHasMore() = " + regions.getHasMore());
-//        System.out.println("regions.getCount() = " + regions.getCount());
-//
-//        System.out.println(regions.getItems().get(0).getRegionName());
-//
-//        List<Item> items = regions.getItems();
-//
-//        System.out.println(items.get(1).getRegionId());
+        Regions regions = response.body().as(Regions.class);
+
+        System.out.println("regions.getHasMore() = " + regions.getHasMore());
+        System.out.println("regions.getCount() = " + regions.getCount());
+
+        System.out.println(regions.getItems().get(0).getRegionName());
+
+        List<Item> items = regions.getItems();
+
+        System.out.println(items.get(1).getRegionId());
         }
 
         @Test
