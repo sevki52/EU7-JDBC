@@ -78,7 +78,33 @@ public class PostRequestDemo {
         assertEquals(name,"MikeEU");
         assertEquals(gender,"Male");
         assertEquals(phone,8877445596l);
+    }
 
+    @Test
+    public void PostNewSpartan2(){
+        //create a map to keep request json body information
+        Map<String,Object> requestMap = new HashMap<>();
+        //adding value that we want to post
+        requestMap.put("name","MikeEU2");
+        requestMap.put("gender","Male");
+        requestMap.put("phone",8877445596l);
 
+        given().log().all()
+                .accept(ContentType.JSON)
+                .and()
+                .contentType(ContentType.JSON)
+                .and()
+                .body(requestMap)
+                .when()
+                .post("/api/spartans")
+                .then().log().all()
+                .statusCode(201)
+                .and()
+                .contentType("application/json")
+                .and()
+                .body("success", is("A Spartan is Born!"),
+                        "data.name",equalTo("MikeEU2"),
+                        "data.gender",equalTo("Male"),
+                        "data.phone",equalTo(8877445596l));
     }
 }
