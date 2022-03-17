@@ -107,4 +107,47 @@ public class PostRequestDemo {
                         "data.gender",equalTo("Male"),
                         "data.phone",equalTo(8877445596l));
     }
+    @Test
+    public void PostNewSpartan3(){
+        //Optional homeworks
+        //Homework-1
+        //1-Create csv file from mackaroo website, which includes name,gender,phone
+        //2-Download excel file
+        //3- using testng data provider and apache poi create data driven posting from spartan
+
+
+        //Homework-2
+        //-Create one mackaroo api for name,gender,phone
+        //send get request to retrieve random info from that api
+        //use those info to send post request to spartan
+
+
+        Spartan spartanEU = new Spartan();
+        spartanEU.setName("MikeEU3");
+        spartanEU.setGender("Male");
+        spartanEU.setPhone(8877445596l);
+
+
+        given().log().all()
+                .accept(ContentType.JSON)
+                .and()
+                .contentType(ContentType.JSON)
+                .and()
+                .body(spartanEU)
+                .when()
+                .post("/api/spartans")
+                .then().log().all()
+                .statusCode(201)
+                .and()
+                .contentType("application/json")
+                .and()
+                .body("success", is("A Spartan is Born!"),
+                        "data.name",equalTo("MikeEU3"),
+                        "data.gender",equalTo("Male"),
+                        "data.phone",equalTo(8877445596l));
+
+        //after post request, send a get request to generated spartan
+
+    }
+
 }
