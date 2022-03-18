@@ -40,4 +40,22 @@ public class PUTRequestDemo {
         //send get request to verify body
 
     }
+    @Test
+    public void PatchTest(){
+        //Create one map for the put request json body
+        Map<String,Object> putRequestMap = new HashMap<>();
+        putRequestMap.put("name","TJ");
+
+        given().log().all()
+                .and()
+                .contentType(ContentType.JSON)
+                .and()
+                .pathParam("id",15)
+                .and()
+                .body(putRequestMap).
+                when()
+                .patch("/api/spartans/{id}")
+                .then().log().all()
+                .assertThat().statusCode(204);
+    }
 }
