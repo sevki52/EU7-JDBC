@@ -85,9 +85,27 @@ Verify:
         System.out.println("employeeList = " + employeeList);
 
         // "employee_id": 102,
-        int employee_id = (int) employeeList.get(1).get("employee_id");
+        //double employee_id = (double) employeeList.get(1).get("employee_id");
+        int employee_id = (int)Double.parseDouble(String.valueOf(employeeList.get(1).get("employee_id")));
         System.out.println("employee_id = " + employee_id);
         assertEquals(employee_id,102);
+        assertEquals(employeeList.get(1).get("first_name"),"Lex");
+        assertEquals(employeeList.get(1).get("last_name"),"De Haan");
+        assertEquals(employeeList.get(1).get("employee_id"),102.0);
+
+        // HREF verification
+        List<Map<String,Object>> links = (List<Map<String, Object>>) employeeList.get(1).get("links");
+        String actualHref = (String) links.get(0).get("href");
+        System.out.println("actualHref = " + actualHref);
+
+        String expectedHref = "http://54.91.210.3:1000/ords/hr/employees/102";
+        assertEquals(actualHref,expectedHref);
+
+        // without variable
+        assertEquals(((List<Map<String,Object>>) employeeList.get(1).get("links")).get(0).get("href"),expectedHref);
+
+
+
     }
 
 }
