@@ -104,8 +104,6 @@ Verify:
         // without variable
         assertEquals(((List<Map<String,Object>>) employeeList.get(1).get("links")).get(0).get("href"),expectedHref);
 
-
-
     }
 
 }
