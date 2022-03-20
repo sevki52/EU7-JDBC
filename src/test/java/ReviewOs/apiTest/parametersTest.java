@@ -1,16 +1,12 @@
 package ReviewOs.apiTest;
 
-
 import static io.restassured.RestAssured.*;
 import static org.testng.Assert.*;
+import static org.hamcrest.Matchers.*;
 
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-
-
-
-
 
 import org.testng.annotations.Test;
 
@@ -68,4 +64,20 @@ And body should contains following information
         // latitude is 38.8604
         assertEquals(jsonPath.getString("places[0].latitude"),"38.8604");
     }
+    @Test
+    public void HemcrestWithZipAPI(){
+        given().log().all().accept(ContentType.JSON)
+                .and().pathParam("zip", 22031)
+                .when().get(zipUrl+"/us/{zip}")
+                .then().assertThat().statusCode(200).and().contentType("application/json")
+                .and().assertThat().header("Server",equalTo("cloudflare")).header("Report-To",notNullValue())
+                .body("country", equalTo("United States"),
+                        "'post code'",equalTo("22031"),
+                        "places[0].state",equalTo("Virginia"),
+                        "'country abbreviation'",equalTo("US"),
+                        "places[0].'place name'",equalTo("Fairfax"),
+                        "places[0].latitude",equalTo("38.8604"));
+    }
+
+
 }
